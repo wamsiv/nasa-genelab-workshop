@@ -1,9 +1,10 @@
 # Workshop-Genelab
 
 Container information:
+
 | Name | Use | Dockerfile location |
 | --- | --- | --- |
-| `mapd/ml` | Demo notebooks | Dockerfile in top-level of `mapd-ml-demo` repo |
+| `workshop-genelab` | Demo notebooks | Dockerfile in top-level of repository |
 
 ## Build
 
