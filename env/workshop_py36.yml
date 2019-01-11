@@ -1,0 +1,17 @@
+name: workshop_py36
+channels:
+- numba
+- conda-forge
+- rapidsai
+- nvidia
+- defaults
+dependencies:
+- python=3.6.*
+- cudf=0.4.0
+- pip:
+  - sklearn
+  - jupyter
+  - graphistry
+  - xgboost
+  - matplotlib
+  - https://s3.amazonaws.com/h2o-release/h2o4gpu/releases/stable/ai/h2o/h2o4gpu/0.3-nccl-cuda9/h2o4gpu-0.3.0-cp36-cp36m-linux_x86_64.whl
