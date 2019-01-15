@@ -16,6 +16,18 @@ ENV DIGITS_URL_PREFIX=/digits
 ENV DIGITS_JOBS_DIR=/dli/data/digits
 ENV DIGITS_LOGFILE_FILENAME=$DIGITS_JOBS_DIR/digits.log
 
+# Set startup
+ENTRYPOINT ./utils/start_workshop_examples.sh
+
+# Install assessment harness services
+RUN apt-get update && apt-get install --upgrade -y --no-install-recommends \
+        python3-venv \
+        python3-pip \
+        redis-server && \
+    python3 -m venv /usr/local/assessment && \
+    /usr/local/assessment/bin/pip install --upgrade pip && \
+    /usr/local/assessment/bin/pip install celery flask redis jupyter
+
 # Setup base environment
 WORKDIR /opt/conda
 
@@ -40,5 +52,3 @@ cd pymapd && \
 pip install -e . "
 
 EXPOSE 8888
-
-CMD bash ./utils/start_workshop_examples.sh
