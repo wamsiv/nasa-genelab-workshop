@@ -2,5 +2,5 @@
 set -e
 
 cd /dli/data/workshop-genelab/notebooks
-source activate $MAPD_ML
+source activate rapids
 jupyter notebook --ip 0.0.0.0 --allow-root
