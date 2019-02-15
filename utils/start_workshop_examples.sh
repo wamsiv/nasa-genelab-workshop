@@ -3,4 +3,4 @@ set -e
 
 cd /dli/data/workshop-genelab/notebooks
 source activate rapids
-jupyter notebook --ip 0.0.0.0 --allow-root
+jupyter lab --ip 0.0.0.0 --allow-root

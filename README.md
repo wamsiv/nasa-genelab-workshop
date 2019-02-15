@@ -5,6 +5,7 @@ Container information:
 | Name | Use | Dockerfile location |
 | --- | --- | --- |
 | `workshop-genelab` | Demo notebooks | Dockerfile in top-level of repository |
+| `mapd-ce-cuda` | Omnisci Core | Omnisci |
 
 ## Build
 
@@ -32,6 +33,7 @@ If running for the first time, make sure you have [nvidia-docker](https://github
     nvidia-docker run -it nvidia/cuda nvidia-smi
 
 
+## Optional
 If you have not signed up for [OmniSci Cloud](https://www.omnisci.com/cloud/), signup for the trial version to get API access to OmniSci core instance in order to run your notebooks. Once signed up, change the connection parameters in your notebook to the following:
 
 	username = '<API KEY>'
@@ -42,11 +44,7 @@ If you have not signed up for [OmniSci Cloud](https://www.omnisci.com/cloud/), s
 
 Finally,
 
-	nvidia-docker run --ipc=host -p 8888:8888 -it workshop-genelab
-
-If you would like to use a volume, add `-v` flag. For example:
-
-	-v notebooks:/dli/data/workshop-genelab/notebooks
+	docker-compose up
 
 Navigate to:
 	

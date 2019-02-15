@@ -1,0 +1,20 @@
+version: '3'
+
+services:
+  omnisci-core:
+    image: 'mapd/mapd-ce-cuda'
+    ports:
+      - 9090:9090
+      - 9091:9091
+      - 9092:9092
+    volumes:
+      - ./data:/mapd-storage
+    ipc: host
+
+  workshop-genelab:
+    image: 'workshop-genelab'
+    ports:
+      - 8888:8888
+    links:
+      - omnisci-core
+    ipc: host
